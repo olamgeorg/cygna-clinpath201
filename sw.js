@@ -1,0 +1,3 @@
+const C='cygna-clinpath201-v1',F=['./','index.html','style.css','app.js','questions.js','supabase-config.js','admin.html','admin.js','manifest.json','https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js'];
+self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>Promise.all(F.map(u=>c.add(u).catch(()=>0))))));
+self.addEventListener('fetch',e=>{if(e.request.method!='GET'||e.request.url.includes('supabase.co'))return;e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(x=>{const y=x.clone();caches.open(C).then(c=>c.put(e.request,y));return x}).catch(()=>caches.match('index.html'))))});
