@@ -216,3 +216,75 @@ th {
 #app > .card:first-child:has(> h2 + button) > a {
   margin: 0;
 }
+/* Login page polish */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+#app:has(> .auth) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header {
+  gap: 8px;
+  white-space: nowrap;
+}
+header > span:first-of-type {
+  font-size: 0.85em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+@media (max-width: 380px) {
+  .logo {
+    font-size: 1em;
+    letter-spacing: 2px;
+  }
+  header > span:first-of-type {
+    font-size: 0.75em;
+  }
+}
+.auth {
+  width: 100%;
+  max-width: 420px;
+  margin: 12px auto;
+}
+.auth h2 {
+  text-align: center;
+  margin: 0 0 12px;
+}
+.auth input {
+  margin: 6px 0;
+}
+.auth button.p {
+  width: 100%;
+  margin: 10px 0 4px;
+  padding: 13px;
+  font-weight: 600;
+}
+.auth p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 16px;
+  font-size: 0;
+  margin: 12px 0 0;
+}
+.auth p a {
+  font-size: 14px;
+  color: var(--p);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 2px;
+}
+.auth p a:hover {
+  text-decoration: underline;
+}
